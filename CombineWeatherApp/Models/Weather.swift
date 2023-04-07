@@ -11,7 +11,6 @@ import Foundation
  实况天气
  https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=b1089c8e3a4bdd58ee3f1655092e54f7
  
-
  {
  "status": "1",
  "count": "1",
@@ -125,33 +124,28 @@ struct WeatherResponse: Codable {
 struct Weather: Identifiable {
     var id = UUID()
     // 省份名
-    var province: String
-    // 城市名
-    var city: String
-    // 天气现象（汉字描述）
-    var weather: String
-    // 实时气温，单位：摄氏度
-    var temperature: String
-    // 风向描述
-    var winddirection: String
-    // 风力级别，单位：级
-    var windpower: String
-    // 空气湿度
-    var humidity: String
-    // 数据发布的时间
-    var reporttime: String
+    var province: String = ""
     
-    // 初始化
-    init(province: String, city: String, weather: String, temperature: String, winddirection: String, windpower: String, humidity: String, reporttime: String) {
-        self.province = province
-        self.city = city
-        self.weather = weather
-        self.temperature = temperature
-        self.winddirection = winddirection
-        self.windpower = windpower
-        self.humidity = humidity
-        self.reporttime = reporttime
-    }
+    // 城市名
+    var city: String = ""
+    
+    // 天气现象（汉字描述）
+    var weather: String = ""
+    
+    // 实时气温，单位：摄氏度
+    var temperature: String = ""
+    
+    // 风向描述
+    var winddirection: String = ""
+    
+    // 风力级别，单位：级
+    var windpower: String = ""
+    
+    // 空气湿度
+    var humidity: String = ""
+    
+    // 数据发布的时间
+    var reporttime: String = ""
 }
 
 // 映射
